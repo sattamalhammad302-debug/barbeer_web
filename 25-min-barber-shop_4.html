@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>66 للحلاقة | 66 Barbershop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#F2F2EF;--tx:#14181B;--mut:#555C60;--sf:#E6E7E3;--sf2:#FFFFFF;--ac:#8A5A00;--line:#CBCDC6;--btn-bg:#14181B;--btn-tx:#F2F2EF;--err:#B3261E;--ok:#1E6B3A;--off:#D9DAD5}
+@media (prefers-color-scheme:dark){:root{--bg:#14181B;--tx:#F1EFE9;--mut:#9AA3A8;--sf:#1D2327;--sf2:#232A2F;--ac:#E9B44C;--line:#2E373C;--btn-bg:#E9B44C;--btn-tx:#14181B;--err:#F2B8B5;--ok:#8FD6A6;--off:#191E21}}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:500 1.05rem/1.7 "Cairo",system-ui,"Segoe UI",Tahoma,sans-serif;padding-bottom:env(safe-area-inset-bottom,0)}
+body.lock{overflow:hidden}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-family:"Cairo",sans-serif;font-weight:700;line-height:1.15;margin:0}
+.wrap{max-width:48rem;margin:0 auto}
+/* hero */
+.hero{background:#0F1315;color:#F1EFE9;padding:calc(1rem + env(safe-area-inset-top,0)) 1.25rem 2.5rem}
+.bar{display:flex;justify-content:flex-end;gap:.5rem}
+.pill{background:none;border:1px solid #E9B44C;color:#E9B44C;border-radius:2rem;padding:.3rem 1rem;cursor:pointer}
+.brand{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;margin-top:1.75rem}
+.ring{width:min(36vw,9rem);height:auto;flex:none}
+h1{font-size:clamp(2.4rem,10vw,3.8rem)}
+.sub{color:#E9B44C;font:600 1.2rem "Cairo",sans-serif;margin-top:.35rem}
+.meta{display:flex;flex-wrap:wrap;gap:.35rem 1rem;margin:1.25rem 0 0;color:#C3CBCF;font-size:.95rem}
+.st{font-weight:600}.st.o{color:#8FD6A6}.st.c{color:#F2B8B5}
+.ctas{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.5rem}
+.cta{background:#E9B44C;color:#14181B;font-weight:600;border:0;padding:.8rem 1.6rem;border-radius:.45rem;cursor:pointer;text-decoration:none}
+.cta.g{background:none;color:#F1EFE9;border:1px solid #5A666C}
+/* section nav */
+.snav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.snav .wrap{display:flex;gap:.25rem;overflow-x:auto;padding:.5rem 1rem;scrollbar-width:none}
+.snav a{flex:none;color:var(--tx);text-decoration:none;padding:.35rem .9rem;border-radius:2rem;font-weight:500}
+.snav a:hover{background:var(--sf)}
+main{padding:0 1.25rem 7rem}
+section{padding-top:2.5rem}
+h2{font-size:1.75rem;margin-bottom:1rem}
+/* category tabs */
+.tabs{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.4rem;margin-bottom:.75rem;scrollbar-width:none}
+.tab{flex:none;background:var(--sf);border:1.5px solid var(--line);border-radius:2rem;padding:.35rem 1rem;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--btn-bg);border-color:var(--btn-bg);color:var(--btn-tx)}
+.svc{display:flex;justify-content:space-between;align-items:center;gap:1rem;border:1.5px solid var(--line);background:var(--sf2);border-radius:.7rem;padding:.9rem 1rem;margin-bottom:.6rem}
+.svc h3{font:600 1.05rem "Cairo",sans-serif}
+.svc .d{color:var(--mut);font-size:.9rem}
+.svc .inc{color:var(--mut);font-size:.88rem;margin-top:.25rem;line-height:1.5}
+.svc .pr{font-weight:600;margin-top:.2rem}
+.add{flex:none;min-width:4.5rem;background:var(--sf);border:1.5px solid var(--line);border-radius:2rem;padding:.4rem .9rem;cursor:pointer;font-weight:600}
+.add[aria-pressed=true]{background:var(--btn-bg);border-color:var(--btn-bg);color:var(--btn-tx)}
+/* team */
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:.75rem}
+.mem{border:1.5px solid var(--line);background:var(--sf2);border-radius:.7rem;padding:1rem;text-align:center}
+.av{width:4.5rem;height:4.5rem;border-radius:50%;margin:0 auto .6rem;background:var(--sf);border:1.5px solid var(--line);display:grid;place-items:center;font:600 1.6rem "Cairo",sans-serif;color:var(--mut)}
+.mem strong{display:block;font:600 1.15rem "Cairo",sans-serif}
+.mem span{display:block;color:var(--mut);font-size:.88rem;line-height:1.5;margin:.25rem 0 .7rem}
+/* boxes */
+.box{border:1.5px solid var(--line);background:var(--sf2);border-radius:.7rem;padding:1.1rem}
+.box p{margin:0 0 .9rem}
+.btn{display:inline-block;background:var(--btn-bg);color:var(--btn-tx);border:0;border-radius:.45rem;padding:.65rem 1.2rem;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.l{background:var(--sf);color:var(--tx);border:1.5px solid var(--line)}
+.row{display:flex;gap:.5rem;flex-wrap:wrap}
+table{width:100%;border-collapse:collapse}
+td{padding:.45rem 0;border-bottom:1px solid var(--line)}td:last-child{text-align:end}
+tr.now td{font-weight:600}
+.facts{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.4rem}
+.facts li::before{content:"✓ ";color:var(--ac);font-weight:600}
+dl{display:grid;grid-template-columns:6.5rem 1fr;gap:.5rem 1rem;margin:1rem 0 0}
+dt{color:var(--mut)}dd{margin:0}
+a.lk{color:var(--ac);font-weight:500}
+footer{padding:1.5rem 1.25rem 7rem;text-align:center;color:var(--mut);font-size:.9rem}
+/* cart bar */
+.cart{position:fixed;inset-inline:0;bottom:0;z-index:20;background:var(--bg);border-top:1.5px solid var(--line);padding:.75rem 1.25rem calc(.75rem + env(safe-area-inset-bottom,0));display:none}
+.cart.on{display:block}
+.cart .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.cart b{display:block}.cart small{color:var(--mut)}
+/* booking sheet */
+.sheet{position:fixed;inset:0;z-index:30;background:var(--bg);display:none;flex-direction:column}
+.sheet.on{display:flex}
+.sh{display:flex;align-items:center;gap:.5rem;padding:calc(.6rem + env(safe-area-inset-top,0)) 1rem .6rem;border-bottom:1px solid var(--line)}
+.ib{background:none;border:0;font-size:1.4rem;width:2.5rem;height:2.5rem;border-radius:50%;cursor:pointer}
+.ib:hover{background:var(--sf)}
+.sh .t{flex:1;text-align:center}
+.sh .t small{display:block;color:var(--mut);font-size:.8rem}
+.sh .t b{font:600 1.15rem "Cairo",sans-serif}
+.sb{flex:1;overflow-y:auto;padding:1rem 1.25rem 2rem}
+.sb .wrap{max-width:40rem}
+.sf{border-top:1.5px solid var(--line);padding:.75rem 1.25rem calc(.75rem + env(safe-area-inset-bottom,0))}
+.sf .wrap{max-width:40rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.sf small{color:var(--mut);display:block}
+.pros{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.pro{text-align:center;background:var(--sf2);border:2px solid var(--line);border-radius:.7rem;padding:1rem .5rem;cursor:pointer}
+.pro[aria-pressed=true]{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.pro strong{display:block;font:600 1.1rem "Cairo",sans-serif}
+.pro span{display:block;color:var(--mut);font-size:.85rem;line-height:1.45}
+.dstrip{display:flex;gap:.45rem;overflow-x:auto;padding-bottom:.5rem;scrollbar-width:thin}
+.dd{flex:none;width:4.2rem;background:var(--sf2);border:1.5px solid var(--line);border-radius:.7rem;padding:.5rem 0;cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1.3}
+.dd b{font-size:1.3rem}.dd span{font-size:.8rem;color:var(--mut)}
+.dd[aria-pressed=true]{background:var(--btn-bg);border-color:var(--btn-bg);color:var(--btn-tx)}
+.dd[aria-pressed=true] span{color:var(--btn-tx)}
+.mon{font-weight:600;margin:0 0 .5rem}
+.slot{background:var(--sf2);border:1.5px solid var(--line);border-radius:.5rem;padding:.55rem 0;cursor:pointer}
+.slot[aria-pressed=true]{background:var(--btn-bg);color:var(--btn-tx);border-color:var(--btn-bg)}
+.wheels{position:relative;display:flex;justify-content:center;gap:1rem;direction:ltr;margin-top:1rem;background:var(--sf2);border:1.5px solid var(--line);border-radius:.8rem;padding:0 1rem}
+.wheels::before{content:"";position:absolute;inset-inline:.6rem;top:50%;height:2.75rem;transform:translateY(-50%);border-radius:.5rem;background:var(--sf);border:1.5px solid var(--ac);pointer-events:none}
+.wheels::after{content:"";position:absolute;inset:0;border-radius:.8rem;pointer-events:none;background:linear-gradient(var(--sf2),transparent 35%,transparent 65%,var(--sf2))}
+.wheel{position:relative;width:8rem;height:13.75rem;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;padding:5.5rem 0;overscroll-behavior:contain}
+.wheel::-webkit-scrollbar{display:none}
+.wheel div{height:2.75rem;line-height:2.75rem;text-align:center;scroll-snap-align:center;font-size:1.25rem;font-weight:500;cursor:pointer;white-space:nowrap}
+.wheel div.dis{color:var(--mut);opacity:.55;font-size:1rem}
+.wheel div.sel{font-weight:700}
+.pick{text-align:center;font-weight:600;margin:.75rem 0 0}
+.pick.bad{color:var(--err)}
+.lbl{display:block;font-weight:600;margin:1.1rem 0 .4rem}
+input[type=text],input[type=tel],textarea,select{width:100%;font:inherit;color:var(--tx);background:var(--sf2);border:1.5px solid var(--line);border-radius:.5rem;padding:.7rem .9rem}
+textarea{min-height:5rem;resize:vertical}
+.step{display:flex;align-items:center;gap:.75rem}
+.step button{width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--line);background:var(--sf2);cursor:pointer;font-size:1.2rem}
+.step b{min-width:1.5rem;text-align:center;font-size:1.2rem}
+.sum{background:var(--sf2);border:1.5px solid var(--line);border-radius:.7rem;padding:1rem;margin-bottom:.5rem}
+.sum div{display:flex;justify-content:space-between;gap:1rem;padding:.2rem 0}
+.sum .tot{border-top:1px solid var(--line);margin-top:.4rem;padding-top:.6rem;font-weight:600}
+.hint{color:var(--mut);font-size:.92rem;margin:.75rem 0 0}
+.err{color:var(--err);font-weight:500;min-height:1.4rem;margin:.5rem 0 0}
+.amts{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.done{text-align:center;padding:2rem 0}
+.done .ck{font-size:3rem;color:var(--ok)}
+.lp{position:fixed;inset:0;z-index:50;background:#0F1315;color:#F1EFE9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding:2rem;text-align:center}
+.lp.off{display:none}
+.lp p{margin:0;color:#C3CBCF}
+.lp .row{flex-direction:column;width:min(100%,18rem)}
+.lp button{background:#E9B44C;color:#14181B;border:0;border-radius:.5rem;padding:.9rem;font-weight:600;font-size:1.15rem;cursor:pointer}
+.lp button+button{background:none;color:#F1EFE9;border:1.5px solid #5A666C}
+.wm{position:fixed;inset:0;z-index:100;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22280%22%20height%3D%22180%22%3E%3Ctext%20x%3D%22140%22%20y%3D%2295%22%20text-anchor%3D%22middle%22%20transform%3D%22rotate%28-28%20140%2090%29%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%20letter-spacing%3D%223%22%20fill%3D%22%237F7F7F%22%20fill-opacity%3D%22.13%22%3EALHAMMAD.W.D%3C/text%3E%3C/svg%3E");background-repeat:repeat}
+@media print{.wm{position:absolute}}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="lock">
+<div class="wm" aria-hidden="true"></div>
+<div class="lp" id="lp" role="dialog" aria-modal="true" aria-label="Language"><svg class="ring" viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r="88" fill="none" stroke="#2A3338" stroke-width="10"/><circle cx="110" cy="110" r="88" fill="none" stroke="#E9B44C" stroke-width="10" stroke-linecap="round" stroke-dasharray="230.4 552.9" transform="rotate(-90 110 110)"/><text x="110" y="134" text-anchor="middle" font-family="Cairo,sans-serif" font-weight="600" font-size="84" fill="#F1EFE9">66</text></svg><p>اختر اللغة · Choose your language</p><div class="row"><button type="button" data-lang="ar" lang="ar">العربية</button><button type="button" data-lang="en" lang="en">English</button></div></div>
+<header class="hero"><div class="wrap">
+<div class="bar"><button class="pill" id="lang" type="button"></button></div>
+<div class="brand">
+<svg class="ring" viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r="104" fill="none" stroke="#3A464C" stroke-width="6" stroke-dasharray="2 52.46"/><circle cx="110" cy="110" r="88" fill="none" stroke="#2A3338" stroke-width="10"/><circle cx="110" cy="110" r="88" fill="none" stroke="#E9B44C" stroke-width="10" stroke-linecap="round" stroke-dasharray="230.4 552.9" transform="rotate(-90 110 110)"/><text x="110" y="134" text-anchor="middle" font-family="Cairo,sans-serif" font-weight="600" font-size="84" fill="#F1EFE9">66</text></svg>
+<div><h1 data-i="name"></h1><div class="sub" data-i="sub"></div></div>
+</div>
+<div class="meta"><span class="st" id="open"></span></div>
+<div class="ctas"><button class="cta" type="button" id="bookTop" data-i="book"></button></div>
+</div></header>
+
+<nav class="snav" aria-label="sections"><div class="wrap">
+<a href="#services" data-i="nS"></a><a href="#team" data-i="nT"></a><a href="#about" data-i="nA"></a>
+</div></nav>
+
+<main><div class="wrap">
+<section id="services"><h2 data-i="nS"></h2>
+<div class="tabs" id="tabs" role="group"></div>
+<div id="list"></div></section>
+
+<section id="team"><h2 data-i="nT"></h2><div class="team" id="teamList"></div></section>
+
+
+
+<section id="about"><h2 data-i="nA"></h2>
+<div class="box"><p data-i="aboutP"></p>
+<h3 data-i="hrsH" style="font-size:1.2rem;margin:1.25rem 0 .4rem"></h3>
+<table><tbody id="hrs"></tbody></table>
+<ul class="facts"><li data-i="f1"></li><li data-i="f3"></li></ul>
+<dl>
+<dt data-i="d3"></dt><dd><a class="lk" href="tel:+966530020130" dir="ltr">053 002 0130</a></dd>
+</dl></div></section>
+</div></main>
+<footer data-i="foot"></footer>
+
+<div class="cart" id="cart"><div class="wrap"><div><b id="cartT"></b><small id="cartS"></small></div><button class="btn" type="button" id="cartGo" data-i="cont"></button></div></div>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shT">
+<div class="sh"><button class="ib" type="button" id="back" aria-label="back">‹</button><div class="t"><small id="shS"></small><b id="shT"></b></div><button class="ib" type="button" id="close" aria-label="close">✕</button></div>
+<div class="sb"><div class="wrap" id="body"></div></div>
+<div class="sf" id="foot"><div class="wrap"><div><b id="fT"></b><small id="fS"></small></div><button class="btn" type="button" id="next"></button></div></div>
+</div>
+
+<script>
+var WA="966530020130", OPEN=780, CLOSE=1500, SLOT=10, DAYS=14;
+var T={ar:{name:"66 للحلاقة",sub:"احجز موعدك أونلاين",book:"احجز الآن",gift:"أرسل هدية",nS:"الخدمات",nT:"الفريق",nR:"التقييمات",nA:"عن الصالون",lang:"English",
+
+giftP:"أهدِ صديقك بطاقة هدية يستخدمها في أي خدمة. اختر المبلغ واكتب الأسماء، ويرسل لك الصالون البطاقة على واتساب.",giftB:"اختر بطاقة هدية",
+aboutP:"صالون حلاقة رجالي. فريقنا متخصص في القصات الكلاسيكية والتدريجات والدقن والصبغات والعناية بالبشرة والشعر، واحجز موعدك من الموقع عشان ما تنتظر.",
+hrsH:"أوقات العمل",f1:"تأكيد الحجز على واتساب",f2:"احجز لك ولأصحابك",f3:"مناسب للأطفال",f4:"بطاقات هدايا",d3:"الهاتف",foot:"66 للحلاقة",
+cont:"متابعة",conf:"تأكيد عبر واتساب",oNow:"مفتوح الآن · حتى 1 ص",cNow:"مغلق الآن · يفتح 1 م",hrsV:"1 م – 1 ص",
+wd:["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],
+stp:"الخطوة {a} من 3",s1:"اختر الخدمات",s2:"اختر الحلاق",s3:"اختر الوقت",s4:"راجع وأكّد",
+any:"أي حلاق متاح",anyS:"أسرع موعد متاح",add:"إضافة",added:"✓ مضافة",from:"من ",sar:"ر.س",min:"د",hr:"س",
+nsvc:function(n){return n==1?"خدمة واحدة":n==2?"خدمتان":n+" خدمات"},booked:"محجوز",ml:"بعد منتصف الليل",
+noT:"لا توجد أوقات متاحة في هذا اليوم. جرّب يوماً آخر.",blk:function(n){return "مدة الموعد تقريباً "+dur(n*SLOT)},
+ppl:"عدد الأشخاص",pplH:"إذا حجزت لأكثر من شخص، كلهم يأخذون نفس الخدمات في نفس الوقت مع حلاقين مختلفين.",nm:"الاسم (اختياري)",nmP:"اكتب اسمك",ph:"رقم الجوال",nt:"ملاحظات (اختياري)",
+e0:"اختر خدمة واحدة على الأقل.",e3:"اختر الوقت.",e4:"اكتب اسمك.",e5:"اكتب رقم جوال صحيح.",
+tot:"الإجمالي",bar:"الحلاق",dt:"الموعد",dur:"المدة",pp:"الأشخاص",
+priceN:"السعر النهائي يؤكده الصالون قبل بدء الخدمة.",okT:"تم تجهيز حجزك",okP:"فتحنا لك واتساب برسالة الحجز. أرسلها، ويؤكد لك الصالون موعدك بالرد.",okB:"تم",
+gT:"بطاقة هدية",gA:"المبلغ",gTo:"اسم المستلم",gFr:"اسمك",gM:"رسالة (اختياري)",gE:"اختر المبلغ واكتب الأسماء.",gS:"اطلب البطاقة عبر واتساب",
+loc:"ar-SA-u-ca-gregory-nu-latn",am:"ص",pm:"م",
+msg:function(o){return "السلام عليكم، أرغب بحجز موعد:\n"+o.svc.map(function(s){return "• "+s}).join("\n")+"\nالحلاق: "+o.bar+"\nالتاريخ: "+o.date+"\nالوقت: "+o.time+"\nالإجمالي التقريبي: "+o.tot+(o.name?"\nالاسم: "+o.name:"")+(o.note?"\nملاحظات: "+o.note:"")},
+gmsg:function(a,t,f,m){return "السلام عليكم، أرغب بشراء بطاقة هدية:\nالمبلغ: "+a+"\nللمستلم: "+t+"\nمن: "+f+(m?"\nالرسالة: "+m:"")}},
+en:{name:"66 Barbershop",sub:"Book your visit online",book:"Book now",gift:"Send a gift",nS:"Services",nT:"Team",nR:"Reviews",nA:"About",lang:"العربية",
+
+giftP:"Treat a friend to a gift card they can use on any service. Pick an amount, add the names, and the shop sends you the card on WhatsApp.",giftB:"Choose a gift card",
+aboutP:"A men's barber shop. Our team specialises in classic cuts, fades, beards, coloring, skin care and hair care. Book online so you don't wait.",
+hrsH:"Opening times",f1:"Booking confirmed on WhatsApp",f2:"Book for yourself and others",f3:"Kid-friendly",f4:"Gift cards",d3:"Phone",foot:"66 Barbershop",
+cont:"Continue",conf:"Confirm on WhatsApp",oNow:"Open now · until 1 AM",cNow:"Closed · opens 1 PM",hrsV:"1 PM – 1 AM",
+wd:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+stp:"Step {a} of 3",s1:"Select services",s2:"Select professional",s3:"Select time",s4:"Review and confirm",
+any:"Any professional",anyS:"Earliest free time",add:"Add",added:"✓ Added",from:"from ",sar:"SAR",min:"min",hr:"h",
+nsvc:function(n){return n==1?"1 service":n+" services"},booked:"Booked",ml:"after midnight",
+noT:"No times left on this day. Try another day.",blk:function(n){return "Your visit takes about "+dur(n*SLOT)},
+ppl:"Number of people",pplH:"Booking for more than one? Everyone gets the same services at the same time with different barbers.",nm:"Name (optional)",nmP:"Type your name",ph:"Mobile number",nt:"Notes (optional)",
+e0:"Choose at least one service.",e3:"Choose a time.",e4:"Type your name.",e5:"Type a valid mobile number.",
+tot:"Total",bar:"Barber",dt:"Appointment",dur:"Duration",pp:"People",
+priceN:"The shop confirms the final price before starting.",okT:"Your booking is ready",okP:"We opened WhatsApp with your booking. Send it and the shop confirms your slot by replying.",okB:"Done",
+gT:"Gift card",gA:"Amount",gTo:"Recipient's name",gFr:"Your name",gM:"Message (optional)",gE:"Pick an amount and type both names.",gS:"Request the card on WhatsApp",
+loc:"en-GB",am:"AM",pm:"PM",
+msg:function(o){return "Hello, I would like to book:\n"+o.svc.map(function(s){return "• "+s}).join("\n")+"\nBarber: "+o.bar+"\nDate: "+o.date+"\nTime: "+o.time+"\nEstimated total: "+o.tot+(o.name?"\nName: "+o.name:"")+(o.note?"\nNotes: "+o.note:"")},
+gmsg:function(a,t,f,m){return "Hello, I would like to buy a gift card:\nAmount: "+a+"\nFor: "+t+"\nFrom: "+f+(m?"\nMessage: "+m:"")}}};
+
+/* ---- menu: edit names, minutes (m) and prices (p) here ---- */
+var C=[["f","مميزة","Featured"],["p","الباقات","Packages"],["h","الشعر","Hair"],["b","الذقن","Beard"],["s","العناية بالبشرة","Skin Care"],["n","العناية بالأظافر","Nail Care"]];
+var S=[
+{c:"b",a:"دقن",e:"Beard Trim",m:25,p:40,f:1},
+{c:"h",a:"قص شعر",e:"Haircut",m:35,p:45,f:1},
+{c:"p",a:"البكج الفضي",e:"Silver Package",m:60,p:120,f:1,ia:"قص شعر، دقن، ماسك شعر، غسول وجه، لصقة تنظيف الأنف، فوطة باردة أو حارة، غسيل شعر، سشوار",ie:"Haircut, beard trim, hair mask, facial cleanser, nose strip, hot or cold towel, hair wash, blow-dry"},
+{c:"p",a:"البكج الذهبي",e:"Golden Package",m:90,p:180,f:1,fr:1,ia:"قص شعر، دقن، واكس كامل الوجه، غسول وجه، سكراب، ماسك وجه، ماسك شعر، غسيل شعر، سشوار",ie:"Haircut, beard trim, full-face waxing, facial cleanser, scrub, face mask, hair mask, hair wash, blow-dry"},
+{c:"s",a:"شمع أنف",e:"Nose Waxing",m:5,p:15,f:1},
+{c:"s",a:"شمع أذنين",e:"Ear Waxing",m:5,p:15,f:1},
+{c:"p",a:"بكج قص الشعر",e:"Haircut Package",m:40,p:65,ia:"قص شعر، ماسك شعر، غسيل شعر، سشوار",ie:"Haircut, hair mask, hair wash, blow-dry"},
+{c:"p",a:"بكج الدقن",e:"Beard Package",m:25,p:55,ia:"دقن، غسول وجه، لصقة تنظيف الأنف، فوطة باردة أو حارة",ie:"Beard trim, facial cleanser, nose strip, hot or cold towel"},
+{c:"p",a:"البكج البلاتيني",e:"Platinum Package",m:120,p:270,ia:"قص شعر، دقن، واكس كامل الوجه، غسول وجه، سكراب، ماسك، تقشير، جلسة تنظيف دهون الوجه، حمام زيت بالبخار، سيروم",ie:"Haircut, beard trim, full-face waxing, cleanser, scrub, mask, exfoliation, facial oil extraction, steam oil bath, serum"},
+{c:"h",a:"قص أطفال",e:"Kids Haircut",m:30,p:45},
+{c:"h",a:"حمام زيت للشعر بالبخار",e:"Steam Oil Bath for Hair",m:30,p:120},
+{c:"h",a:"سشوار",e:"Blow-Dry",m:10,p:30},
+{c:"h",a:"ماسك شعر",e:"Hair Mask",m:15,p:45},
+{c:"h",a:"سيروم",e:"Serum",m:5,p:20},
+{c:"h",a:"صبغة شعر",e:"Hair Coloring",m:40,p:85},
+{c:"h",a:"سحب لون",e:"Hair Bleaching",m:120,p:450},
+{c:"h",a:"ديتوكس شعر",e:"Hair Detox",m:60,p:120},
+{c:"h",a:"بروتين",e:"Protein Treatment",m:90,p:300,fr:1},
+{c:"h",a:"كيراتين",e:"Keratin Treatment",m:60,p:350},
+{c:"b",a:"سشوار دقن",e:"Beard Blow-Dry",m:10,p:25},
+{c:"b",a:"صبغة دقن",e:"Beard Coloring",m:15,p:50},
+{c:"b",a:"صبغة شنب",e:"Mustache Coloring",m:15,p:30},
+{c:"b",a:"بروتين دقن",e:"Beard Protein Treatment",m:40,p:100},
+{c:"s",a:"قناع للوجه",e:"Face Mask",m:10,p:45},
+{c:"s",a:"سكراب",e:"Scrub",m:15,p:45},
+{c:"s",a:"ماسك",e:"Mask",m:15,p:45},
+{c:"s",a:"واكس كامل الوجه",e:"Full-Face Waxing",m:10,p:50},
+{c:"s",a:"شمع وجه",e:"Face Waxing",m:5,p:25},
+{c:"n",a:"العناية باليدين والقدمين",e:"Mani-Pedi",m:60,p:120},
+{c:"n",a:"العناية باليدين",e:"Manicure",m:30,p:65},
+{c:"n",a:"العناية بالقدمين",e:"Pedicure",m:30,p:85}];
+var B=[
+{e:"Morad",a:"مراد",sa:"صبغات وقصات كلاسيك",se:"Coloring and classic cuts"},
+{e:"Mahmoud",a:"محمود",sa:"تدريجات ورسومات بالموس وتسريح بالاستشوار",se:"Fades, razor designs and blow-dry styling"},
+{e:"Sameh",a:"سامح",sa:"تدريجات الدقن وقصات الشعر والصبغات",se:"Beard fades, haircuts and coloring"},
+{e:"Bahaa",a:"بهاء",sa:"أخصائي تجميل البشرة والعناية بالشعر والبروتين",se:"Skin care, hair care and protein treatment"}];
+
+var L="ar",cat="f",cart=[],step=0,pro=-1,day=0,slot=null,ppl=1,gAmt=0,mode="book",$=function(i){return document.getElementById(i)};
+function x(){return T[L]}
+function nm(o){return L=="ar"?o.a:o.e}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function dur(m){var h=Math.floor(m/60),n=m%60;return (h?h+" "+x().hr+(n?" ":""):"")+(n?n+" "+x().min:"")}
+function price(s){return (s.fr?x().from:"")+s.p+" "+x().sar}
+function tot(){return cart.reduce(function(a,i){return a+S[i].p},0)}
+function mins(){return cart.reduce(function(a,i){return a+S[i].m},0)}
+function blocks(){return Math.max(1,Math.ceil(mins()/SLOT))}
+function fmt(m){var h=Math.floor(m/60)%24,n=m%60,k=h%12||12;return k+":"+(n<10?"0":"")+n+" "+(h>=12?x().pm:x().am)}
+function dOf(k){var n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate()+k)}
+function key(k){var d=dOf(k);return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+/* booked slots are kept in this browser so a time you book shows as booked */
+function load(){try{return JSON.parse(localStorage.getItem("b25")||"{}")}catch(e){return {}}}
+function save(o){try{localStorage.setItem("b25",JSON.stringify(o))}catch(e){}}
+function busy(k,b,t){var o=load()[key(k)+"|"+b];return !!(o&&o.indexOf(t)>=0)}
+function freeAt(k,t,n){var r=[];for(var b=0;b<B.length;b++){var ok=true;for(var j=0;j<n;j++)if(busy(k,b,t+j*SLOT))ok=false;if(ok)r.push(b)}return r}
+function crew(k,t){var n=blocks();if(t+n*SLOT>CLOSE)return null;var f=freeAt(k,t,n);
+if(pro>=0){if(f.indexOf(pro)<0)return null;f=[pro].concat(f.filter(function(b){return b!=pro}))}
+return f.length>=ppl?f.slice(0,ppl):null}
+
+function isOpen(){var d=new Date(),m=d.getHours()*60+d.getMinutes();return m>=OPEN||m<CLOSE-1440}
+function renderPage(){
+var X=x();document.documentElement.lang=L;document.documentElement.dir=L=="ar"?"rtl":"ltr";document.title=X.name+" | "+(L=="ar"?T.en.name:T.ar.name);
+document.querySelectorAll("[data-i]").forEach(function(e){e.textContent=X[e.getAttribute("data-i")]});
+$("lang").textContent=X.lang;var o=isOpen();$("open").textContent=o?X.oNow:X.cNow;$("open").className="st "+(o?"o":"c");
+
+$("tabs").innerHTML=tabsHTML();$("list").innerHTML=listHTML();
+$("teamList").innerHTML=B.map(function(b,i){return '<div class="mem"><div class="av" aria-hidden="true">'+esc(nm(b).charAt(0))+'</div><strong>'+esc(nm(b))+'</strong><span>'+esc(L=="ar"?b.sa:b.se)+'</span><button class="btn l" type="button" data-pro="'+i+'">'+X.book+'</button></div>'}).join("");
+var td=new Date().getDay(),h="";for(var i=0;i<7;i++){var w=(i+6)%7;h+='<tr'+(w==td?' class="now"':'')+'><td>'+X.wd[w]+'</td><td>'+X.hrsV+'</td></tr>'}$("hrs").innerHTML=h;
+cartBar();if($("sheet").classList.contains("on"))renderSheet()}
+function tabsHTML(){return C.map(function(c){return '<button class="tab" type="button" data-cat="'+c[0]+'" aria-pressed="'+(cat==c[0])+'">'+(L=="ar"?c[1]:c[2])+'</button>'}).join("")}
+function listHTML(){var X=x();return S.map(function(s,i){if(cat=="f"?!s.f:s.c!=cat)return "";var on=cart.indexOf(i)>=0;
+return '<div class="svc"><div><h3>'+esc(nm(s))+'</h3>'+(s.ia?'<div class="inc">'+esc(L=="ar"?s.ia:s.ie)+'</div>':'')+'<div class="pr">'+price(s)+'</div></div><button class="add" type="button" data-svc="'+i+'" aria-pressed="'+on+'">'+(on?X.added:X.add)+'</button></div>'}).join("")}
+function cartBar(){var X=x(),on=cart.length&&!$("sheet").classList.contains("on");$("cart").classList.toggle("on",!!on);
+$("cartT").textContent=X.from+tot()+" "+X.sar;$("cartS").textContent=X.nsvc(cart.length)}
+function toggle(i){var k=cart.indexOf(i);if(k>=0)cart.splice(k,1);else cart.push(i);slot=null}
+
+/* booking sheet */
+function openSheet(st){mode="book";step=st;$("sheet").classList.add("on");document.body.classList.add("lock");renderSheet();cartBar()}
+function shut(){$("sheet").classList.remove("on");document.body.classList.remove("lock");if(mode=="ok"){cart=[];pro=-1;slot=null;ppl=1;day=0}mode="book";renderPage()}
+function foot(t,s,b){$("foot").style.display="";$("fT").textContent=t;$("fS").textContent=s;$("next").textContent=b}
+function renderSheet(){var X=x(),bd=$("body");$("back").style.visibility=(mode=="book"&&step>0)?"visible":"hidden";
+if(mode=="gift")return giftSheet();
+if(mode=="ok"){$("shS").textContent="";$("shT").textContent="";$("foot").style.display="none";bd.innerHTML='<div class="done"><div class="ck">✓</div><h2>'+X.okT+'</h2><p>'+X.okP+'</p><button class="btn" type="button" id="okB">'+X.okB+'</button></div>';$("okB").onclick=shut;return}
+$("shS").textContent=X.stp.replace("{a}",step+1);$("shT").textContent=[X.s1,X.s2,X.s3,X.s4][step];
+var sum=X.from+tot()+" "+X.sar,sub=X.nsvc(cart.length);
+if(step==0){bd.innerHTML='<div class="tabs" role="group">'+tabsHTML()+'</div>'+listHTML()+'<p class="err" id="e"></p>';foot(sum,sub,X.cont)}
+else if(step==1){bd.innerHTML='<div class="pros"><button class="pro" type="button" data-p="-1" aria-pressed="'+(pro<0)+'"><div class="av" aria-hidden="true">✦</div><strong>'+X.any+'</strong><span>'+X.anyS+'</span></button>'+
+B.map(function(b,i){return '<button class="pro" type="button" data-p="'+i+'" aria-pressed="'+(pro==i)+'"><div class="av" aria-hidden="true">'+esc(nm(b).charAt(0))+'</div><strong>'+esc(nm(b))+'</strong><span>'+esc(L=="ar"?b.sa:b.se)+'</span></button>'}).join("")+'</div>';foot(sum,sub,X.cont)}
+else if(step==2){timeSheet();foot(X.from+tot()*ppl+" "+X.sar,sub,X.conf)}
+}
+var fv={n:"",p:"",t:""};
+function dateStr(k,long){return dOf(k).toLocaleDateString(x().loc,long?{weekday:"long",day:"numeric",month:"long"}:{weekday:"short"})}
+function timeSheet(){var X=x(),bd=$("body"),now=new Date(),nowM=now.getHours()*60+now.getMinutes(),h='<p class="mon">'+dOf(day).toLocaleDateString(X.loc,{month:"long",year:"numeric"})+'</p><div class="dstrip" role="group">';
+for(var k=0;k<DAYS;k++){var d=dOf(k);h+='<button class="dd" type="button" data-d="'+k+'" aria-pressed="'+(day==k)+'"><b>'+d.getDate()+'</b><span>'+dateStr(k)+'</span></button>'}
+h+='</div>';
+var all=[],free=0;for(var t=OPEN;t+SLOT<=CLOSE;t+=SLOT){if(day==0&&t<=nowM)continue;var ok=!!crew(day,t);all.push({t:t,ok:ok});if(ok)free++}
+if(slot!==null&&!all.some(function(o){return o.t===slot&&o.ok}))slot=null;
+if(slot===null)for(var i=0;i<all.length;i++)if(all[i].ok){slot=all[i].t;break}
+if(!free){bd.innerHTML=h+'<p class="hint">'+X.noT+'</p><p class="err" id="e" role="alert"></p>';slot=null;pmHook();return}
+h+='<div class="wheels"><div class="wheel" id="wh" role="listbox" aria-label="hour"></div><div class="wheel" id="wm" role="listbox" aria-label="minute"></div></div><p class="pick" id="pick"></p><label class="lbl" for="iN">'+X.nm+'</label><input type="text" id="iN" autocomplete="name" placeholder="'+X.nmP+'" value="'+esc(fv.n)+'"><p class="err" id="e" role="alert"></p>';
+bd.innerHTML=h;pmHook();$("iN").oninput=function(){fv.n=this.value;$("e").textContent=""};
+var hrs=[];all.forEach(function(o){var hh=Math.floor(o.t/60);if(hrs.indexOf(hh)<0)hrs.push(hh)});
+function hLab(hh){var k=hh%24,p=k>=12?X.pm:X.am;return (k%12||12)+" "+p}
+function inH(hh){return all.filter(function(o){return Math.floor(o.t/60)==hh})}
+function showPick(){var el=$("pick"),o=all.filter(function(o){return o.t===cur})[0];
+if(o&&o.ok){slot=o.t;el.className="pick";el.textContent=dateStr(day,true)+" · "+fmt(o.t)+(o.t>=1440?" ("+X.ml+")":"")}
+else{slot=null;el.className="pick bad";el.textContent=X.booked}}
+var cur=slot,curH=Math.floor(slot/60);
+function fill(w,items,sel,onPick){w.innerHTML=items.map(function(it,i){return '<div role="option" dir="'+(L=="ar"?"rtl":"ltr")+'" data-i="'+i+'" class="'+(it.dis?'dis':'')+(i==sel?' sel':'')+'">'+it.l+'</div>'}).join("");
+var H=w.firstChild.offsetHeight;w.scrollTop=sel*H;var tm;
+w.onscroll=function(){clearTimeout(tm);tm=setTimeout(function(){var i=Math.round(w.scrollTop/H);i=Math.max(0,Math.min(items.length-1,i));
+[].forEach.call(w.children,function(c,j){c.classList.toggle("sel",j==i)});onPick(i)},90)};
+w.onclick=function(e){var c=e.target.closest("[data-i]");if(c)w.scrollTo({top:+c.dataset.i*H,behavior:"smooth"})}}
+function minW(hh,keepT){var list=inH(hh),sel=0,f=-1;list.forEach(function(o,i){if(o.t===keepT)sel=i;if(f<0&&o.ok)f=i});
+if(keepT===undefined||!list.some(function(o){return o.t===keepT}))sel=f<0?0:f;
+fill($("wm"),list.map(function(o){var m=o.t%60;return {l:(m<10?"0":"")+m+(o.ok?"":" · "+X.booked),dis:!o.ok}}),sel,function(i){cur=list[i].t;showPick()});
+cur=list[sel].t;showPick()}
+fill($("wh"),hrs.map(function(hh){return {l:hLab(hh),dis:!inH(hh).some(function(o){return o.ok})}}),hrs.indexOf(curH),function(i){if(hrs[i]!==curH){curH=hrs[i];minW(curH)}});
+minW(curH,cur)}
+function pmHook(){}
+function nextStep(){var X=x(),e=$("e");
+if(mode=="gift")return sendGift();
+if(step==0&&!cart.length){e.textContent=X.e0;return}
+if(step==2&&(slot===null||!crew(day,slot))){e.textContent=X.e3;return}
+if(step<2){step++;renderSheet();$("body").parentNode.scrollTop=0;return}
+var nn=fv.n.trim();
+var c=crew(day,slot);if(!c){step=2;renderSheet();return}
+var o=load(),bl=blocks();c.forEach(function(b){var k=key(day)+"|"+b;o[k]=o[k]||[];for(var j=0;j<bl;j++)o[k].push(slot+j*SLOT)});save(o);
+var msg=X.msg({svc:cart.map(function(i){return nm(S[i])+" ("+price(S[i])+")"}),bar:c.map(function(b){return nm(B[b])}).join("، "),date:dateStr(day,true),time:fmt(slot)+(slot>=1440?" ("+X.ml+")":""),ppl:ppl,tot:X.from+tot()*ppl+" "+X.sar,note:"",name:nn});
+window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");fv={n:"",p:"",t:""};mode="ok";renderSheet()}
+
+/* gift */
+var gv={t:"",f:"",m:""};
+function giftOpen(){mode="gift";$("sheet").classList.add("on");document.body.classList.add("lock");renderSheet();cartBar()}
+function giftSheet(){var X=x();$("shS").textContent="";$("shT").textContent=X.gT;
+$("body").innerHTML='<p>'+X.giftP+'</p><label class="lbl">'+X.gA+'</label><div class="amts">'+[100,200,300,500].map(function(a){return '<button class="slot" type="button" data-g="'+a+'" aria-pressed="'+(gAmt==a)+'">'+a+' '+X.sar+'</button>'}).join("")+'</div>'+
+'<label class="lbl" for="gT">'+X.gTo+'</label><input type="text" id="gT" value="'+esc(gv.t)+'"><label class="lbl" for="gF">'+X.gFr+'</label><input type="text" id="gF" value="'+esc(gv.f)+'"><p class="err" id="e" role="alert"></p>';
+["gT","gF"].forEach(function(id,j){$(id).oninput=function(){gv["tfm"[j]]=this.value}});
+foot(gAmt?gAmt+" "+X.sar:"","",X.gS)}
+function sendGift(){var X=x();if(!gAmt||!gv.t.trim()||!gv.f.trim()){$("e").textContent=X.gE;return}
+window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(X.gmsg(gAmt+" "+X.sar,gv.t.trim(),gv.f.trim(),gv.m.trim())),"_blank","noopener");gv={t:"",f:"",m:""};gAmt=0;mode="ok";renderSheet()}
+
+/* events */
+document.addEventListener("click",function(ev){var t=ev.target.closest("button");if(!t)return;var d=t.dataset;
+if(d.lang){L=d.lang;$("lp").classList.add("off");document.body.classList.remove("lock");renderPage();return}
+if(d.cat!==undefined){cat=d.cat;renderPage()}
+else if(d.svc!==undefined){toggle(+d.svc);renderPage()}
+else if(d.pro!==undefined){pro=+d.pro;slot=null;openSheet(cart.length?2:0)}
+else if(d.p!==undefined){pro=+d.p;slot=null;renderSheet()}
+else if(d.d!==undefined){day=+d.d;slot=null;timeSheet()}
+else if(d.g!==undefined){gAmt=+d.g;giftSheet()}});
+$("lang").onclick=function(){L=L=="ar"?"en":"ar";renderPage()};
+$("bookTop").onclick=function(){openSheet(0)};$("cartGo").onclick=function(){openSheet(0)};
+
+$("close").onclick=shut;$("back").onclick=function(){if(step>0){step--;renderSheet()}};
+$("next").onclick=nextStep;
+document.addEventListener("keydown",function(e){if(e.key=="Escape"&&$("sheet").classList.contains("on"))shut()});
+renderPage();
+</script>
+</body>
+</html>
